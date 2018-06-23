@@ -11,7 +11,7 @@ elif [ "$OSTYPE" = "suse" ]; then
 elif [ "$OSTYPE" = "netbsd" ]; then
 	pkgin update
 elif [ "$OSTYPE" = "freebsd" ]; then
-	pkg update
+	pkg-static update
 elif [ "$OSTYPE" = "qnap" ]; then
 	ipkg update
 else

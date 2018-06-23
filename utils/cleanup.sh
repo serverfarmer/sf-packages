@@ -7,7 +7,7 @@ if [ -x /etc/local/hooks/pre-upgrade.sh ]; then
 fi
 
 if [ "$OSTYPE" = "debian" ]; then
-	apt-get autoremove && apt-get autoremove
+	apt-get autoremove && apt-get autoremove && apt-get clean
 elif [ "$OSTYPE" = "redhat" ]; then
 	echo "cleanup not required on RHEL"
 elif [ "$OSTYPE" = "suse" ]; then
@@ -16,7 +16,7 @@ elif [ "$OSTYPE" = "netbsd" ]; then
 	pkgin autoremove
 	pkgin clean
 elif [ "$OSTYPE" = "freebsd" ]; then
-	pkg autoremove
+	pkg-static autoremove
 else
 	echo "cleanup not implemented on $OSTYPE system"
 fi

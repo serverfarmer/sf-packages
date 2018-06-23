@@ -15,7 +15,7 @@ elif [ "$OSTYPE" = "suse" ]; then
 elif [ "$OSTYPE" = "netbsd" ]; then
 	pkgin full-upgrade
 elif [ "$OSTYPE" = "freebsd" ]; then
-	pkg upgrade
+	pkg-static upgrade
 elif [ "$OSTYPE" = "qnap" ]; then
 	ipkg upgrade
 else

@@ -27,9 +27,9 @@ uninstall_pkg() {
 	if [ "`pkg info |grep ^$pkg-`" != "" ]; then
 		echo "uninstalling package $pkg"
 		if [ "$SF_UNATTENDED" != "" ]; then
-			pkg delete -y $pkg
+			pkg-static delete -y $pkg
 		else
-			pkg delete $pkg
+			pkg-static delete $pkg
 		fi
 	fi
 }

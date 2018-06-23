@@ -47,9 +47,9 @@ install_pkg() {
 	if [ "`pkg info |grep ^$pkg-`" = "" ]; then
 		echo "installing package $pkg"
 		if [ "$SF_UNATTENDED" != "" ]; then
-			pkg install -y $pkg
+			pkg-static install -y $pkg
 		else
-			pkg install $pkg
+			pkg-static install $pkg
 		fi
 	fi
 }
