@@ -3,7 +3,7 @@
 
 
 if [ "$OSTYPE" = "debian" ]; then
-	apt-get --dry-run upgrade |grep ^'Inst ' |cut -d' ' -f2
+	apt-get --dry-run upgrade 2>/dev/null |grep ^'Inst ' |cut -d' ' -f2
 elif [ "$OSTYPE" = "redhat" ]; then
 	yum list updates 2>/dev/null |awk '{ if (($3=="base") || ($3=="updates")) print $1 }' |sed -e s/.noarch//g -e s/.x86_64//g -e s/.i686//g
 elif [ "$OSTYPE" = "suse" ]; then
