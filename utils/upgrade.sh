@@ -6,7 +6,9 @@ if [ -x /etc/local/hooks/pre-upgrade.sh ]; then
 	/etc/local/hooks/pre-upgrade.sh
 fi
 
-if [ "$OSTYPE" = "debian" ]; then
+if [ -s /etc/local/.config/upgrade.disable ]; then
+	echo "upgrade disabled by upgrade.disable file"
+elif [ "$OSTYPE" = "debian" ]; then
 	apt-get upgrade
 elif [ "$OSTYPE" = "redhat" ]; then
 	yum update
