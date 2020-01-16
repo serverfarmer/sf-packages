@@ -85,7 +85,7 @@ fi
 for package in $@; do
 	if [ "$OSTYPE" = "debian" ]; then
 		install_deb $package
-	elif [ "$OSTYPE" = "redhat" ]; then
+	elif [ "$OSTYPE" = "redhat" ] || [ "$OSTYPE" = "amazon" ]; then
 		install_rpm $package
 	elif [ "$OSTYPE" = "suse" ]; then
 		install_suse $package

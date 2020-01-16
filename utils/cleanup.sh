@@ -8,6 +8,8 @@ fi
 
 if [ "$OSTYPE" = "debian" ]; then
 	apt-get autoremove && apt-get autoremove && apt-get clean
+elif [ "$OSTYPE" = "amazon" ]; then
+	echo "cleanup not required on Amazon Linux"
 elif [ "$OSTYPE" = "redhat" ]; then
 	echo "cleanup not required on RHEL"
 elif [ "$OSTYPE" = "suse" ]; then

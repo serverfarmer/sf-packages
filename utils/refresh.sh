@@ -4,6 +4,8 @@
 
 if [ "$OSTYPE" = "debian" ]; then
 	apt-get update
+elif [ "$OSTYPE" = "amazon" ]; then
+	echo "refresh not required on Amazon Linux"
 elif [ "$OSTYPE" = "redhat" ]; then
 	echo "refresh not required on RHEL"
 elif [ "$OSTYPE" = "suse" ]; then

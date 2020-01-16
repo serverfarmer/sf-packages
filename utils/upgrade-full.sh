@@ -10,7 +10,7 @@ if [ -s /etc/local/.config/upgrade.disable ]; then
 	echo "upgrade disabled by upgrade.disable file"
 elif [ "$OSTYPE" = "debian" ]; then
 	apt-get dist-upgrade
-elif [ "$OSTYPE" = "redhat" ]; then
+elif [ "$OSTYPE" = "redhat" ] || [ "$OSTYPE" = "amazon" ]; then
 	yum upgrade
 elif [ "$OSTYPE" = "suse" ]; then
 	aptitude dist-upgrade

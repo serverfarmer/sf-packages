@@ -67,7 +67,7 @@ fi
 for package in $@; do
 	if [ "$OSTYPE" = "debian" ]; then
 		uninstall_deb $package
-	elif [ "$OSTYPE" = "redhat" ] || [ "$OSTYPE" = "suse" ]; then
+	elif [ "$OSTYPE" = "redhat" ] || [ "$OSTYPE" = "amazon" ] || [ "$OSTYPE" = "suse" ]; then
 		uninstall_rpm $package
 	elif [ "$OSTYPE" = "netbsd" ]; then
 		uninstall_pkgin $package
