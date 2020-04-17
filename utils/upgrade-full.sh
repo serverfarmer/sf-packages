@@ -6,6 +6,10 @@ if [ -x /etc/local/hooks/pre-upgrade.sh ]; then
 	/etc/local/hooks/pre-upgrade.sh --full
 fi
 
+if [ -x /opt/farm/ext/service-restarter/utils/docker-save.sh ]; then
+	/opt/farm/ext/service-restarter/utils/docker-save.sh
+fi
+
 if [ -s /etc/local/.config/upgrade.disable ]; then
 	echo "upgrade disabled by upgrade.disable file"
 elif [ "$OSTYPE" = "debian" ]; then
@@ -22,6 +26,10 @@ elif [ "$OSTYPE" = "qnap" ]; then
 	ipkg upgrade
 else
 	echo "upgrade not implemented on $OSTYPE system"
+fi
+
+if [ -x /opt/farm/ext/service-restarter/utils/docker-restart.sh ]; then
+	/opt/farm/ext/service-restarter/utils/docker-restart.sh
 fi
 
 if [ -x /etc/local/hooks/post-upgrade.sh ]; then
