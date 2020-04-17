@@ -28,7 +28,7 @@ else
 	echo "upgrade not implemented on $OSTYPE system"
 fi
 
-if [ -x /opt/farm/ext/service-restarter/utils/docker-restart.sh ]; then
+if [ -x /opt/farm/ext/service-restarter/utils/docker-restart.sh ] && [ ! -s /etc/local/.config/upgrade.disable ]; then
 	/opt/farm/ext/service-restarter/utils/docker-restart.sh
 fi
 
