@@ -6,7 +6,9 @@ if [ -x /etc/local/hooks/pre-upgrade.sh ]; then
 	/etc/local/hooks/pre-upgrade.sh --cleanup
 fi
 
-if [ "$OSTYPE" = "debian" ]; then
+if [ -s /etc/local/.config/upgrade.disable ] && [ "$OSTYPE" = "debian" ]; then
+	echo "cleanup disabled by upgrade.disable file"
+elif [ "$OSTYPE" = "debian" ]; then
 	apt-get autoremove && apt-get autoremove && apt-get clean
 elif [ "$OSTYPE" = "amazon" ]; then
 	echo "cleanup not required on Amazon Linux"
