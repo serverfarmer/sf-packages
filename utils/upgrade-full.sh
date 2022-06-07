@@ -2,8 +2,8 @@
 . /etc/farmconfig
 
 
-if [ -x /etc/local/hooks/pre-upgrade.sh ]; then
-	/etc/local/hooks/pre-upgrade.sh --full
+if [ -x ~/.serverfarmer/hooks/pre-upgrade.sh ]; then
+	~/.serverfarmer/hooks/pre-upgrade.sh --full
 fi
 
 if [ -x /opt/farm/ext/service-restarter/utils/docker-save.sh ]; then
@@ -32,6 +32,6 @@ if [ -x /opt/farm/ext/service-restarter/utils/docker-restart.sh ] && [ ! -s /etc
 	/opt/farm/ext/service-restarter/utils/docker-restart.sh
 fi
 
-if [ -x /etc/local/hooks/post-upgrade.sh ]; then
-	/etc/local/hooks/post-upgrade.sh --full
+if [ -x ~/.serverfarmer/hooks/post-upgrade.sh ]; then
+	~/.serverfarmer/hooks/post-upgrade.sh --full
 fi

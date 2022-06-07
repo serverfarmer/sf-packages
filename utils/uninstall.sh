@@ -60,8 +60,8 @@ if [ "$1" = "" ]; then
 	exit
 fi
 
-if [ -x /etc/local/hooks/pre-upgrade.sh ]; then
-	/etc/local/hooks/pre-upgrade.sh --uninstall
+if [ -x ~/.serverfarmer/hooks/pre-upgrade.sh ]; then
+	~/.serverfarmer/hooks/pre-upgrade.sh --uninstall
 fi
 
 for package in $@; do
@@ -78,6 +78,6 @@ for package in $@; do
 	fi
 done
 
-if [ -x /etc/local/hooks/post-upgrade.sh ]; then
-	/etc/local/hooks/post-upgrade.sh --uninstall
+if [ -x ~/.serverfarmer/hooks/post-upgrade.sh ]; then
+	~/.serverfarmer/hooks/post-upgrade.sh --uninstall
 fi

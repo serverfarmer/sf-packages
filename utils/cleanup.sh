@@ -2,8 +2,8 @@
 . /etc/farmconfig
 
 
-if [ -x /etc/local/hooks/pre-upgrade.sh ]; then
-	/etc/local/hooks/pre-upgrade.sh --cleanup
+if [ -x ~/.serverfarmer/hooks/pre-upgrade.sh ]; then
+	~/.serverfarmer/hooks/pre-upgrade.sh --cleanup
 fi
 
 if [ -s /etc/local/.config/upgrade.disable ] && [ "$OSTYPE" = "debian" ]; then
@@ -25,6 +25,6 @@ else
 	echo "cleanup not implemented on $OSTYPE system"
 fi
 
-if [ -x /etc/local/hooks/post-upgrade.sh ]; then
-	/etc/local/hooks/post-upgrade.sh --cleanup
+if [ -x ~/.serverfarmer/hooks/post-upgrade.sh ]; then
+	~/.serverfarmer/hooks/post-upgrade.sh --cleanup
 fi
