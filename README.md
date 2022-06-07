@@ -7,7 +7,7 @@ Supported systems:
 - Debian, Ubuntu and their clones
 - RHEL and clones
 - Amazon Linux
-- SuSE
+- SuSE Linux
 - FreeBSD
 - NetBSD
-- [Optware IPKG](https://wiki.qnap.com/wiki/Install_Optware_IPKG) (eg. older QNAP models)
+- any embedded Linux with [Optware IPKG](https://wiki.qnap.com/wiki/Install_Optware_IPKG) (eg. older QNAP models)
